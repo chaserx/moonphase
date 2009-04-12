@@ -6,7 +6,7 @@ require 'time'
 module Moonphase
   VERSION = '0.0.1'
   # Moon
-  # Create a Moon object. <tt>my_moon = Moon.new</tt>
+  # Create a Moon object. <tt>my_moon = Moonphase::Moon.new</tt>
   # Get the phase of the moon. <tt>my_moon.getphase("4/11")</tt>
   # Put the moon phase to stdout <tt>puts my_moon.phase</tt>
   class Moon

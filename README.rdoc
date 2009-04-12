@@ -24,7 +24,7 @@
   require 'moonphase'
   
   t = Time.now
-  moon = Moon.new
+  moon = Moonphase::Moon.new
   moon.getphase(t)
   
   puts moon.phase
@@ -33,7 +33,7 @@
   
   require 'moonphase'
   
-  moon = Moon.new
+  moon = Moonphase::Moon.new
   moon.getphase("4/11")
   
   puts moon.phase
