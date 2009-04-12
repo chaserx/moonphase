@@ -1,9 +1,2 @@
-require 'Time'
+#I'm not sure what's supposed to go here. 
 
-class Moonphase
-  def initialize
-    
-  end
-  
-  
-end
