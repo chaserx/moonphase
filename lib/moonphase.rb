@@ -10,6 +10,8 @@ module Moonphase
   # Get the phase of the moon. <tt>my_moon.getphase("4/11")</tt>
   # Put the moon phase to stdout <tt>puts my_moon.phase</tt>
   class Moon
+    # create a new moon instance, initialize it's phase to unknown.
+    # current usage: my_moon = Moonphase::Moon.new
     def initialize
       @phase = "unknown phase"
     end
@@ -17,19 +19,21 @@ module Moonphase
     
     # getphase(arg)
     # Pass either a Time object like <tt>Time.now</tt> or a +String+ that +Time+ can parse like <tt>"4/11"</tt> or <tt>"Dec 31"</tt>
+    # Current usage: <tt>my_moon.getphase("4/11")</tt>s
     def getphase(arg)
       # accept only String or Time types
+      # if a string parse it into a time object then reformat
       if arg.class == String
         time = Time.parse(arg)
         date = time.strftime("%m %d %Y")
-        # perform the calculation        
+        # perform the calculation by calling the private method calcphase       
         calcphase(date)        
-        
+      # else if it's already a time object then just reformat.  
       elsif arg.class == Time
         date = arg.strftime("%m %d %Y")
-        # perform the calcualtion
+        # perform the calcualtion by calling the private method calcphase       
         calcphase(date)
-        
+      # some basic error handling. raise an argument error if not string or time types
       else
         raise "wrong type must be string or time"
       end
@@ -44,7 +48,7 @@ module Moonphase
     # and translated into Ruby by Chase Southard on 4/4/2009
     def calcphase(arg)
       
-      # some constants to allow for the moon phase calculation
+      # some constants to allow for the moon phase calculation. although, using local variables.
       ages = [18, 0, 11, 22, 3, 14, 25, 6, 17, 28, 9, 20, 1, 12, 23, 4, 15, 26, 7]
       offsets = [-1, 1, 0, 1, 2, 3, 4, 5, 7, 7, 9, 9]
       description = ["new (totally dark)",
