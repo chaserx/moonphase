@@ -4,6 +4,7 @@ PostInstall.txt
 README.rdoc
 Rakefile
 lib/moonphase.rb
+lib/moonphase/moonphase.rb
 script/console
 script/destroy
 script/generate

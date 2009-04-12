@@ -1,32 +1,57 @@
 = moonphase
 
-* FIX (url)
+  http://github.com/chaserx/moonphase/tree/master
 
 == DESCRIPTION:
 
-FIX (describe your package)
+  The moonphase gem provides uses a simple calculation described by HAB on http://www.daniweb.com/code/snippet492.html to calculate the moon phase.
+
+  One public method, <tt>getphase(arg)</tt>, takes a single argument that is either a Time or String type. The private method calcphase is invoked and modifies <tt>@phase</tt>
+  
+  Sections of this code were taken from the following:
+  
+  * Python code by HAB
+  * http://www.daniweb.com/code/snippet492.html
+  
+  and translated into Ruby by Chase Southard on 4/4/2009
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* Calculates the phase of the moon based given a date. 
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+  require 'moonphase'
+  
+  t = Time.now
+  moon = Moon.new
+  moon.getphase(t)
+  
+  puts moon.phase
+  
+  or
+  
+  require 'moonphase'
+  
+  moon = Moon.new
+  moon.getphase("4/11")
+  
+  puts moon.phase
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* Ruby 1.8.6 +
+* Ruby 1.9.1 has not been tested. 
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+  sudo gem install moonphase --source=http://gems.github.com
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 chaserx
+Copyright (c) 2009 Chase Southard
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
